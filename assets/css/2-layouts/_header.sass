@@ -1,0 +1,51 @@
+header
+  height: 600px
+  background:
+    image: url(../img/headerBG@2x.png)
+    size: cover
+    position: center 10px
+    repeat: no-repeat
+  overflow: hidden
+
+  .container
+    height: 100%
+    @include display(flex)
+    @include align-items(center)
+
+    .header-content
+
+      h1
+        font-weight: 300
+        margin: 0
+
+        span
+          font-weight: 700
+          color: $lime
+          display: inline-block
+
+        &:nth-of-type(1)
+          span
+            color: $lime
+
+        &:nth-of-type(2)
+          margin-bottom: 20px
+
+          span
+            color: $blue
+
+      p
+        padding: 0
+
+@media (max-width: 775px)
+  header
+    background:
+      image: none
+
+    .container
+      @include justify-content(center)
+
+@media (max-width: 400px)
+  header .container
+    .header-content
+      h1
+        font-size: 14vw
